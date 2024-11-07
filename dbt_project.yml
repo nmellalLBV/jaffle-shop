@@ -4,10 +4,7 @@ name: "jaffle_shop"
 version: "3.0.0"
 require-dbt-version: ">=1.5.0"
 
-dbt-cloud:
-  project-id: 275557 # Put your project id here
-
-profile: default # Put your profile here
+profile: my_dbt_demo # Put your profile here
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -41,6 +38,6 @@ models:
     # enabled: "{{ target.name in ['prod','analytics'] }}"
 
 # Required from dbt 1.8 and above for certain Elementary features
-config:
+flags:
   require_explicit_package_overrides_for_builtin_materializations: False
   source_freshness_run_project_hooks: True
